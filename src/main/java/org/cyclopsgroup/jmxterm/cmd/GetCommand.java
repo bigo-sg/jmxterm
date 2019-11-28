@@ -79,9 +79,10 @@ public class GetCommand extends Command {
         String[] attributeNameElements = attributeName.split("\\.");
 
         String attributeNameToRequest = attributeName;
-        if (attributeNameElements.length > 1) {
-          attributeNameToRequest = attributeNameElements[0];
-        }
+        // Presto is using Nested metrics, so we need to comment this out.
+        //if (attributeNameElements.length > 1) {
+        //  attributeNameToRequest = attributeNameElements[0];
+        //}
 
         Object result = con.getAttribute(name, attributeNameToRequest);
 
